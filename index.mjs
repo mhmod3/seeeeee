@@ -110,5 +110,14 @@ ${data.tracks
   }
 });
 
+// إبقاء التطبيق نشطًا
 keepAlive();
-bot.launch();
+
+// تشغيل البوت مع التحقق من الأخطاء
+bot.launch()
+  .then(() => {
+    console.log(`${emojis.success} البوت تم تشغيله بنجاح!`);
+  })
+  .catch((err) => {
+    console.error(`${emojis.error} فشل تشغيل البوت!`, err);
+  });
