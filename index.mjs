@@ -3,6 +3,7 @@ import { HiAnime } from 'aniwatch';
 import express from 'express';
 import keepAlive from './keep_alive.js';
 import dotenv from 'dotenv';
+dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN); // استبدل بـ التوكن الخاص بك
 const hianime = new HiAnime.Scraper();
