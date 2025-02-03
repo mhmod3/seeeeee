@@ -1,7 +1,9 @@
 import { Telegraf, Markup } from 'telegraf';
 import { HiAnime } from 'aniwatch';
+import express from 'express';
+import keepAlive from './keep_alive.js';
 
-const bot = new Telegraf('7524565250:AAEdYw9Q9H_5WtGXIfUxCTl8K3ZpA49a4so'); // استبدل بـ التوكن الخاص بك
+const bot = new Telegraf(process.env.token); // استبدل بـ التوكن الخاص بك
 const hianime = new HiAnime.Scraper();
 
 // إيموجي لتحسين الرسائل
@@ -108,5 +110,5 @@ ${data.tracks
   }
 });
 
-// تشغيل البوت
+keepAlive();
 bot.launch();
